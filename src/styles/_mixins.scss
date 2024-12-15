@@ -1,0 +1,25 @@
+// MIXINS
+@mixin transition($duration: 250ms) {
+  -webkit-transition: all $duration linear;
+  -moz-transition: all $duration linear;
+  -o-transition: all $duration linear;
+  transition: all $duration linear;
+}
+
+@mixin laptop($max-width: 1440px) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin tablet($max-width: 768px) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin mobile($max-width: 440px) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
