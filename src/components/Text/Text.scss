@@ -1,0 +1,124 @@
+.text {
+  position: relative;
+  color: variables.$color-text-black;
+  z-index: 1;
+
+  &.size_small {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+  &.size_normal {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+  &.size_medium {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  &.size_big {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+  &.size_title {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+  &.size_bigTitle {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+  }
+  &.size_enormous {
+    font-size: 4rem;
+    line-height: 4.4rem;
+  }
+
+  &.weight_light {
+    font-weight: 300;
+  }
+  &.weight_regular {
+    font-weight: 400;
+  }
+  &.weight_medium {
+    font-weight: 500;
+  }
+
+  &.display_block {
+    display: block;
+  }
+  &.display_inline {
+    display: inline-block;
+  }
+  &.display_inline {
+    display: inline;
+  }
+
+  &.align_left {
+    text-align: left;
+  }
+  &.align_center {
+    text-align: center;
+  }
+  &.align_right {
+    text-align: right;
+  }
+  &.align_justify {
+    text-align: justify;
+  }
+
+  &.margin_top {
+    margin-top: 2.5rem;
+  }
+  &.margin_bottom {
+    margin-bottom: 2.5rem;
+  }
+
+  &.color_main {
+    color: variables.$color-primary;
+  }
+  &.color_secondary {
+    color: variables.$color-secondary;
+  }
+  &.color_black {
+    color: variables.$color-text-black;
+  }
+  &.color_white {
+    color: variables.$color-text-white;
+  }
+}
+
+@include mixins.tablet {
+  .text {
+    &.size_small {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+    }
+    &.size_normal,
+    &.size_medium {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+    &.size_big {
+      font-size: 1.6rem;
+      line-height: 1.8rem;
+    }
+    &.size_title {
+      font-size: 1.8rem;
+      line-height: 2rem;
+    }
+    &.size_bigTitle {
+      font-size: 2.2rem;
+      line-height: 2.4rem;
+    }
+    &.size_enormous {
+      font-size: 2.8rem;
+      line-height: 3rem;
+    }
+
+    &.margin_top {
+      margin-top: 2rem;
+    }
+    &.margin_bottom {
+      margin-bottom: 2rem;
+    }
+  }
+}
