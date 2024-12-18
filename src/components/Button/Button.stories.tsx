@@ -9,7 +9,11 @@ export default {
 } as Meta<typeof Button>;
 
 // Plantilla base
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+const Template: StoryFn<typeof Button> = (args) => (
+  <div className="sandbox">
+    <Button {...args} />
+  </div>
+);
 
 // Variaciones de la plantilla
 export const Default = Template.bind({});

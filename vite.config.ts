@@ -38,6 +38,7 @@ export default defineConfig({
           @use "@styles/variables";
           @use "@styles/mixins";
           @use "@styles/global";
+          @use "@styles/fonts";
         `, // Asegúrate de que esta ruta sea correcta
       },
     },

@@ -6,10 +6,15 @@
   border-radius: 10px;
   color: variables.$color-text-white;
   cursor: pointer;
+  @include mixins.transition(300ms, ease-out);
 
   &Disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &:hover {
+    background-color: variables.$color-secondary;
   }
 
   &Spinner {

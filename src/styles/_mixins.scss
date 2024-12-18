@@ -1,9 +1,9 @@
 // MIXINS
-@mixin transition($duration: 250ms) {
-  -webkit-transition: all $duration linear;
-  -moz-transition: all $duration linear;
-  -o-transition: all $duration linear;
-  transition: all $duration linear;
+@mixin transition($duration: 250ms, $kind: linear) {
+  -webkit-transition: all $duration $kind;
+  -moz-transition: all $duration $kind;
+  -o-transition: all $duration $kind;
+  transition: all $duration $kind;
 }
 
 @mixin laptop($max-width: 1440px) {
