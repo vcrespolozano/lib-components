@@ -1,8 +1,8 @@
 import { Meta, StoryFn } from "@storybook/react";
-import { Card } from "@components/Card";
+import { Card } from "@components/molecules/Card";
 
 export default {
-  title: "Components/Card",
+  title: "Components/molecules/Card",
   component: Card,
   argTypes: {},
 } as Meta<typeof Card>;

@@ -1,8 +1,8 @@
 import { Meta, StoryFn } from "@storybook/react";
-import { Text } from "@components/Text";
+import { Text } from "@components/atoms/Text";
 
 export default {
-  title: "Components/Text",
+  title: "Components/atoms/Text",
   component: Text,
   argTypes: {},
 } as Meta<typeof Text>;
