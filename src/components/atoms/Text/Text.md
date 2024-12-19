@@ -1,3 +1,3 @@
-```jsx
+```tsx
 import { Text } from "lib-components";
 ```

@@ -1,12 +1,16 @@
 import React from "react";
 import "./Card.scss";
 import { Text } from "@components/atoms/Text";
+import { Button } from "@components/atoms/Button";
 
 export interface CardProps {
   title?: string;
   description?: string;
   shadow?: boolean;
   rounded?: boolean;
+  buttonOnClick?: () => void;
+  buttonLabel?: string;
+  buttonPosition?: "left" | "right";
 }
 
 export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
@@ -14,6 +18,9 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   shadow,
   title,
   description,
+  buttonOnClick,
+  buttonPosition = "left",
+  buttonLabel,
   children,
 }) => {
   return (
@@ -39,6 +46,11 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
         />
       )}
       {children}
+      {buttonOnClick && buttonLabel && (
+        <div className={`card__button_container align-${buttonPosition}`}>
+          <Button label={buttonLabel} onClick={buttonOnClick} />
+        </div>
+      )}
     </div>
   );
 };
