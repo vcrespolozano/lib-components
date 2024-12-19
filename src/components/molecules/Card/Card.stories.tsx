@@ -21,8 +21,6 @@ export const Default = Template.bind({});
 Default.args = {
   title: "Title",
   description: "Description",
-  shadow: true,
-  rounded: true,
 };
 
 export const WithButton = Template.bind({});
