@@ -1,3 +1,3 @@
 ```tsx
-import { Text } from "lib-components";
+import { Text } from "vcl-components";
 ```

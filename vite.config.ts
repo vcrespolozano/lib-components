@@ -10,8 +10,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "lib-components",
-      fileName: (format) => `lib-components.${format}.js`,
+      name: "vcl-components",
+      fileName: (format) => `vcl-components.${format}.js`,
       formats: ["es", "cjs"],
     },
     rollupOptions: {

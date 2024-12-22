@@ -1,3 +1,3 @@
 ```tsx
-import { Button } from "lib-components";
+import { Button } from "vcl-components";
 ```

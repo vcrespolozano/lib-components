@@ -1,3 +1,3 @@
 ```tsx
-import { Card } from "lib-components";
+import { Card } from "vcl-components";
 ```
