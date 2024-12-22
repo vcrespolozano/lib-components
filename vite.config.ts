@@ -39,6 +39,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
+          @use "animate.css/animate.min.css";
           @use "@styles/variables";
           @use "@styles/mixins";
           @use "@styles/global";

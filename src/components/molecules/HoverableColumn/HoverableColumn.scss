@@ -1,0 +1,49 @@
+.hoverableColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  z-index: 1;
+
+  &.align_left {
+    align-items: flex-start;
+  }
+  &.align_center {
+    align-items: center;
+  }
+  &.align_right {
+    align-items: flex-end;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &__icon,
+  &__title,
+  &__description {
+    position: relative;
+    @include mixins.transition(300ms, ease-in-out);
+    z-index: 2;
+  }
+
+  &:hover {
+    .hoverableColumn__icon {
+      animation: swing 1s ease-in-out;
+    }
+    &:after {
+      opacity: 1;
+      animation: zoomIn 0.5s ease-in-out;
+    }
+  }
+}
