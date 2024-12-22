@@ -8,9 +8,9 @@
   }
 
   &__label {
-    padding-left: 1rem;
+    padding-left: 1.6rem;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   &__box {
@@ -53,17 +53,17 @@
   &__placeholder {
     position: absolute;
     top: calc(50% + 0.7rem);
-    left: 10px;
+    left: 16px;
     transform: translateY(-50%);
     @include mixins.transition(200ms, ease-out);
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
     pointer-events: none;
     opacity: 0.4;
     z-index: 2;
 
     &.placeholder-top {
-      top: 0;
+      top: -10px;
       transform: translateY(0%);
       opacity: 1;
     }

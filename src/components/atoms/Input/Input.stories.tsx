@@ -36,6 +36,14 @@ Default.args = {
   placeholder: "Placeholder",
 };
 
+export const PlaceholderTurnsLabel = Template.bind({});
+PlaceholderTurnsLabel.args = {
+  name: "exampleInput",
+  id: "exampleInput",
+  placeholder: "Placeholder",
+  placeholderLabel: true,
+};
+
 export const WithLabel = Template.bind({});
 WithLabel.args = {
   label: "Label",
