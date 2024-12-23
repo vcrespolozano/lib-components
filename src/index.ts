@@ -9,3 +9,4 @@ export * from "@components/atoms/Toast";
 /* MOLECULES */
 export * from "@components/molecules/Card";
 export * from "@components/molecules/HoverableColumn";
+export * from "@components/molecules/Modal";

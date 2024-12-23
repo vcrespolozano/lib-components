@@ -1,0 +1,214 @@
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  overflow: hidden;
+  z-index: 10;
+
+  &__popUp {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 50%;
+    max-width: 768px;
+    margin: auto;
+    background: variables.$color-white;
+    border: 2px solid variables.$color-secondary;
+    border-radius: 12px;
+    padding: 4rem;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    &.shortPopup {
+      max-width: 480px;
+    }
+
+    &_close {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -25px;
+      width: 50px;
+      height: 50px;
+      border: 2px solid variables.$color-secondary;
+      border-radius: 100%;
+      background: variables.$color-white;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 2;
+      @include mixins.transition;
+
+      svg {
+        color: variables.$color-primary;
+        @include mixins.transition;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: variables.$color-primary;
+
+          svg {
+            color: variables.$color-secondary;
+          }
+        }
+      }
+    }
+
+    &_content {
+      max-height: 500px;
+      padding-right: 1.5rem;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background: variables.$color-primary;
+      }
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: variables.$color-background;
+      }
+
+      .popup-title {
+        position: relative;
+        color: variables.$color-primary;
+        margin-bottom: 1rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid variables.$color-secondary;
+        z-index: 1;
+      }
+      .popup-description {
+        color: variables.$color-primary;
+        line-height: 2.4rem;
+
+        ul {
+          margin-bottom: 0;
+          padding-left: 2rem;
+
+          li {
+            margin-bottom: 0.6rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &_buttons {
+      display: flex;
+      margin-top: 2rem;
+      justify-content: space-between;
+
+      .button {
+        max-width: 49%;
+      }
+    }
+
+    &.animated_popupIn {
+      -webkit-animation-duration: 700ms;
+      animation-duration: 700ms;
+      -webkit-animation-name: popUpIn;
+      animation-name: popUpIn;
+    }
+    &.animated_popupOut {
+      -webkit-animation-duration: 700ms;
+      animation-duration: 700ms;
+      -webkit-animation-name: popUpOut;
+      animation-name: popUpOut;
+    }
+  }
+}
+
+@include mixins.tablet {
+  .modal {
+    &__popUp {
+      padding: 2.5rem 1.5rem;
+      &.fullScreenMobile {
+        left: 0;
+        right: 0;
+        top: 25px;
+        bottom: 48px;
+        transform: none;
+        height: auto;
+      }
+
+      &_content {
+        max-height: 450px;
+      }
+    }
+  }
+}
+
+@keyframes popUpIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%) scale3d(0.3, 0.3, 0.3);
+    transform: translateY(-50%) scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: translateY(-50%) scale3d(1.1, 1.1, 1.1);
+    transform: translateY(-50%) scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: translateY(-50%) scale3d(0.9, 0.9, 0.9);
+    transform: translateY(-50%) scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-50%) scale3d(1.03, 1.03, 1.03);
+    transform: translateY(-50%) scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: translateY(-50%) scale3d(0.97, 0.97, 0.97);
+    transform: translateY(-50%) scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(-50%) scale3d(1, 1, 1);
+    transform: translateY(-50%) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes popUpOut {
+  20% {
+    -webkit-transform: translateY(-50%) scale3d(0.9, 0.9, 0.9);
+    transform: translateY(-50%) scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+    opacity: 1;
+    -webkit-transform: translateY(-50%) scale3d(1.1, 1.1, 1.1);
+    transform: translateY(-50%) scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-50%) scale3d(0.3, 0.3, 0.3);
+    transform: translateY(-50%) scale3d(0.3, 0.3, 0.3);
+  }
+}
