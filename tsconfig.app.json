@@ -1,33 +1,22 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "./dist",
+    "declaration": true, // Generar archivos .d.ts
+    "declarationDir": "./dist", // Directorio para declaraciones
     "emitDeclarationOnly": true, // Solo emite archivos de tipos, no JS
-    "outDir": "./dist",
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
+    "outDir": "./dist", // Directorio para archivos compilados
+    "target": "ES2020", // Target para navegadores modernos o Node.js
+    "module": "ESNext", // Módulo ESNext para tree-shaking
+    "moduleResolution": "bundler", // Resolución de módulos estilo Node.js
+    "skipLibCheck": true, // No chequear tipos en dependencias externas
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Librerías utilizadas
+    "removeComments": true, // Remover comentarios en la salida
+    "strict": true, // Activar modo estricto
+    "sourceMap": false, // No generar mapas de origen
     "baseUrl": "./",
+    "jsx": "react-jsx",
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"]

@@ -3,11 +3,19 @@ import react from "@vitejs/plugin-react";
 import { fileURLToPath } from "url";
 import path from "path";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import dts from "vite-plugin-dts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [react(), cssInjectedByJsPlugin()],
+  plugins: [
+    react(),
+    cssInjectedByJsPlugin(),
+    dts({
+      tsconfigPath: "./tsconfig.build.json",
+      outDir: "./dist",
+    }),
+  ],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
