@@ -2,16 +2,7 @@
   "extends": "./tsconfig.app.json", // Hereda configuraciones generales
   "compilerOptions": {
     "emitDeclarationOnly": false, // Emitir .js y .d.ts (en lugar de solo tipos)
-    "removeComments": true, // Remover comentarios en la salida
-    "noEmit": false, // Emitir archivos .js
-    "outDir": "./dist", // Directorio para archivos compilados
-    "declarationDir": "./dist", // Directorio para declaraciones
-    "target": "ES2020", // Target para la compilación
-    "module": "ESNext", // Para tree-shaking
-    "moduleResolution": "bundler", // Resolución de módulos estilo Node.js
-    "skipLibCheck": true, // No chequear tipos en dependencias externas
-    "sourceMap": false // No generar mapas de origen
+    "noEmit": false // Emitir archivos .js
   },
-  "include": ["src"], // Incluir archivos del directorio src
   "exclude": ["node_modules", "dist", "test"] // Excluir dependencias y pruebas
 }
