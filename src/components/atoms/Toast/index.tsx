@@ -7,6 +7,7 @@ export interface ToastProps {
   description?: string;
   onClose?: () => void;
   life?: number;
+  className?: string;
 }
 
 export const Toast: React.FC<ToastProps> = ({
@@ -14,6 +15,7 @@ export const Toast: React.FC<ToastProps> = ({
   description,
   onClose,
   life = 3000,
+  className,
 }) => {
   const [toastClass, setToastClass] = useState(
     "animate__animated animate__fadeInDown"
@@ -35,7 +37,7 @@ export const Toast: React.FC<ToastProps> = ({
   }
 
   return (
-    <div className={`toast ${toastClass}`}>
+    <div className={`toast ${className || ""} ${toastClass}`}>
       {title && (
         <Text
           value={title}
