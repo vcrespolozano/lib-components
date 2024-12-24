@@ -1,0 +1,15 @@
+.link {
+  text-decoration: none;
+  color: variables.$color-primary;
+  @include mixins.transition(300ms);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+
+  &:hover {
+    color: variables.$color-secondary;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
