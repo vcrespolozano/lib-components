@@ -15,6 +15,7 @@ export interface CardProps {
   borderLess?: boolean;
   align?: "left" | "right" | "center";
   className?: string;
+  neonBorder?: boolean;
 }
 
 export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
@@ -28,6 +29,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   blurred,
   borderLess,
   align = "left",
+  neonBorder = false,
   className,
   children,
 }) => {
@@ -35,7 +37,9 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
     <div
       className={`card ${rounded ? "rounded" : ""} ${shadow ? "shadow" : ""} ${
         blurred ? "blurred" : ""
-      } ${borderLess ? "borderLess" : ""} ${className || ""}`}
+      } ${borderLess ? "borderLess" : ""} ${neonBorder ? "neonBorder" : ""} ${
+        className || ""
+      }`}
     >
       {title && (
         <Text

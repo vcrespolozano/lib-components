@@ -43,4 +43,5 @@ Blurred.args = {
   buttonLabel: "Button",
   blurred: true,
   borderLess: true,
+  neonBorder: true,
 };
