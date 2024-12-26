@@ -10,9 +10,10 @@ export interface CardProps {
   rounded?: boolean;
   buttonOnClick?: () => void;
   buttonLabel?: string;
-  buttonPosition?: "left" | "right";
+  buttonPosition?: "left" | "right" | "center";
   blurred?: boolean;
   borderLess?: boolean;
+  align?: "left" | "right" | "center";
 }
 
 export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
@@ -25,6 +26,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   buttonLabel,
   blurred,
   borderLess,
+  align = "left",
   children,
 }) => {
   return (
@@ -39,6 +41,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
           kind="PARAGRAPH"
           weight="weight_medium"
           size="size_title"
+          align={`align_${align}`}
           className="card__title"
         />
       )}
@@ -48,6 +51,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
           kind="PARAGRAPH"
           weight="weight_medium"
           size="size_normal"
+          align={`align_${align}`}
           className="card__description"
         />
       )}
