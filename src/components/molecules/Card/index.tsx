@@ -11,6 +11,8 @@ export interface CardProps {
   buttonOnClick?: () => void;
   buttonLabel?: string;
   buttonPosition?: "left" | "right";
+  blurred?: boolean;
+  borderLess?: boolean;
 }
 
 export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
@@ -21,11 +23,15 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   buttonOnClick,
   buttonPosition = "left",
   buttonLabel,
+  blurred,
+  borderLess,
   children,
 }) => {
   return (
     <div
-      className={`card ${rounded ? "rounded" : ""} ${shadow ? "shadow" : ""}`}
+      className={`card ${rounded ? "rounded" : ""} ${shadow ? "shadow" : ""} ${
+        blurred ? "blurred" : ""
+      } ${borderLess ? "borderLess" : ""}`}
     >
       {title && (
         <Text

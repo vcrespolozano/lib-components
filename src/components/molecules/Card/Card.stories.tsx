@@ -32,3 +32,15 @@ WithButton.args = {
   buttonOnClick: () => alert("Button Clicked"),
   buttonLabel: "Button",
 };
+
+export const Blurred = Template.bind({});
+Blurred.args = {
+  title: "With Button",
+  description: "Description",
+  shadow: true,
+  rounded: true,
+  buttonOnClick: () => alert("Button Clicked"),
+  buttonLabel: "Button",
+  blurred: true,
+  borderLess: true,
+};
