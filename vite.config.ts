@@ -15,6 +15,21 @@ export default defineConfig({
       tsconfigPath: "./tsconfig.build.json",
       outDir: "./dist",
     }),
+    {
+      name: "deduplicate-styles",
+      generateBundle(_, bundle) {
+        const styles = new Set();
+        Object.values(bundle).forEach((file) => {
+          if (file.type === "asset" && file.fileName.endsWith(".css")) {
+            if (styles.has(file.source)) {
+              delete bundle[file.fileName];
+            } else {
+              styles.add(file.source);
+            }
+          }
+        });
+      },
+    },
   ],
   build: {
     lib: {
