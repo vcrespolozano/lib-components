@@ -2,7 +2,6 @@ import React from "react";
 import "./Link.scss";
 
 export interface LinkProps {
-  label: string;
   href?: string;
   onClick?: () => void;
   className?: string;
@@ -10,13 +9,13 @@ export interface LinkProps {
   rel?: string;
 }
 
-export const Link: React.FC<LinkProps> = ({
+export const Link: React.FC<React.PropsWithChildren<LinkProps>> = ({
   href,
-  label,
   onClick,
   className,
   target = "_self",
   rel,
+  children,
 }) => {
   return (
     <a
@@ -26,7 +25,7 @@ export const Link: React.FC<LinkProps> = ({
       target={target}
       rel={rel || ""}
     >
-      {label}
+      {children}
     </a>
   );
 };

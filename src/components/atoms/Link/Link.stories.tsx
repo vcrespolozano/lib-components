@@ -19,6 +19,6 @@ const Template: StoryFn<typeof Link> = (args) => <Link {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "Link example",
   onClick: () => alert("Link clicked"),
+  children: "Click me",
 };
