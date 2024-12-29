@@ -38,7 +38,7 @@ export const Image: React.FC<ImageProps> = ({
   };
 
   return (
-    <div style={{ width, height }}>
+    <div className="image_container" style={{ width, height }}>
       {isLoading && <Spinner />}
       {hasError && <div>Error loading image</div>}
       <img
