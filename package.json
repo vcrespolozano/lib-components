@@ -1,11 +1,13 @@
 {
-  "name": "vcl-components",
-  "private": true,
+  "name": "@vcrespolozano/vcl-components",
   "version": "0.0.1",
   "type": "module",
   "main": "dist/vcl-components.cjs.js",
   "module": "dist/vcl-components.es.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
