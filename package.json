@@ -1,10 +1,11 @@
 {
   "name": "@vcrespolozano/vcl-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "dist/vcl-components.cjs.js",
   "module": "dist/vcl-components.es.js",
   "types": "dist/index.d.ts",
+  "repository": "https://github.com/vcrespolozano/vcl-components",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },

@@ -6,3 +6,4 @@ tsconfig.build.json
 tsconfig.app.json
 tsconfig.node.json
 .gitignore
+deploy.txt

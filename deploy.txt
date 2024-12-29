@@ -1,0 +1,2 @@
+git tag vX.X.X
+git push origin vX.X.X
